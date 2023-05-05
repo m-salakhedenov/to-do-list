@@ -11,7 +11,7 @@ public class AppUser {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String login;
+  private String username;
 
   private String password;
 
@@ -21,9 +21,9 @@ public class AppUser {
   public AppUser() {
   }
 
-  public AppUser(Long id, String login, String password, List<TodoItem> todoItems) {
+  public AppUser(Long id, String username, String password, List<TodoItem> todoItems) {
     this.id        = id;
-    this.login     = login;
+    this.username  = username;
     this.password  = password;
     this.todoItems = todoItems;
   }
@@ -36,12 +36,12 @@ public class AppUser {
     this.id = id;
   }
 
-  public String getLogin() {
-    return login;
+  public String getUsername() {
+    return username;
   }
 
-  public void setLogin(String login) {
-    this.login = login;
+  public void setUsername(String username) {
+    this.username = username;
   }
 
   public String getPassword() {
@@ -64,7 +64,7 @@ public class AppUser {
   public String toString() {
     return "User{" +
         "id=" + id +
-        ", login='" + login + '\'' +
+        ", login='" + username + '\'' +
         ", password='" + password + '\'' +
         ", todoItems=" + todoItems +
         '}';
