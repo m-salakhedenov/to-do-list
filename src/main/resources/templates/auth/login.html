@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head.html"></div>
+<body>
+<div class="container d-flex justify-content-center align-items-center gap-3 flex-column min-vh-100">
+
+  <div th:if="${param.error}" class="row w-75">
+    <div class="p-3 rounded-3 bg-white text-center border border-1 border-danger text-danger">
+      Введен неправильный логин или пароль
+    </div>
+  </div>
+
+  <div class="row py-5 gx-5 rounded-3 bg-white w-75">
+
+    <div class="col-8 border-start px-5">
+
+      <h2 class="mb-3">Login</h2>
+
+      <form th:action="@{/auth/login}" method="POST">
+
+        <label class="mb-1" for="inputUsername">Username</label>
+        <input class="form-control mb-2" type="text" th:name="username" id="inputUsername">
+
+        <label class="mb-1" for="inputPassword">Password</label>
+        <input class="form-control mb-2" type="password" th:name="password" id="inputPassword">
+
+        <div class="mt-4 d-flex gap-2">
+          <button class="btn btn-primary px-4" type="submit">Login</button>
+          <a th:href="@{/auth/reset}" class="btn btn-link" type="button">Signup</a>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
