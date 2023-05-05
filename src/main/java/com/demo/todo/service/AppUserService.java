@@ -32,7 +32,10 @@ public class AppUserService {
       return CreateUserResult.USERNAME_TAKEN;
     }
 
-    AppUser appUser = new AppUser(signupRequestDto.getUsername(), signupRequestDto.getPassword());
+    AppUser appUser = new AppUser(
+        signupRequestDto.getUsername(),
+        passwordEncoder.encode(signupRequestDto.getPassword())
+    );
 
     appUserRepository.save(appUser);
 
