@@ -6,7 +6,7 @@
 
   <div th:if="${param.error}" class="row w-75">
     <div class="p-3 rounded-3 bg-white text-center border border-1 border-danger text-danger">
-      Введен неправильный логин или пароль
+      Username already taken
     </div>
   </div>
 
@@ -14,9 +14,9 @@
 
     <div class="col px-5">
 
-      <h2 class="mb-3">Login</h2>
+      <h2 class="mb-3">Create an account</h2>
 
-      <form th:action="@{/auth/login}" method="POST">
+      <form th:action="@{/auth/signup}" method="POST">
 
         <label class="mb-1" for="inputUsername">Username</label>
         <input class="form-control mb-2" type="text" th:name="username" id="inputUsername">
@@ -24,9 +24,12 @@
         <label class="mb-1" for="inputPassword">Password</label>
         <input class="form-control mb-2" type="password" th:name="password" id="inputPassword">
 
+        <label class="mb-1" for="inputRepeatPassword">Repeat password</label>
+        <input class="form-control mb-2" type="password" th:name="repeatPassword" id="inputRepeatPassword">
+
         <div class="mt-4 d-flex gap-2">
-          <button class="btn btn-primary px-4" type="submit">Login</button>
-          <a th:href="@{/auth/signup}" class="btn btn-outline-primary" type="button">Signup</a>
+          <button class="btn btn-primary px-4" type="submit">Signup</button>
+          <a th:href="@{/auth/login}" class="btn btn-outline-primary" type="button">Login</a>
         </div>
 
       </form>
