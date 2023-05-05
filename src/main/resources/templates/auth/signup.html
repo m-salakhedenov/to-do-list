@@ -4,9 +4,9 @@
 <body>
 <div class="container d-flex justify-content-center align-items-center gap-3 flex-column min-vh-100">
 
-  <div th:if="${param.error}" class="row w-75">
-    <div class="p-3 rounded-3 bg-white text-center border border-1 border-danger text-danger">
-      Username already taken
+  <div th:if="${result}" class="row w-50">
+    <div class="p-3 rounded-3 bg-white text-center border border-1" th:classappend="${result.error ? 'border-danger text-danger' : 'border-success text-success'}">
+      [(${result.message})]
     </div>
   </div>
 
