@@ -19,13 +19,13 @@
       <form th:action="@{/auth/signup}" method="POST">
 
         <label class="mb-1" for="inputUsername">Username</label>
-        <input class="form-control mb-2" type="text" th:name="username" id="inputUsername">
+        <input class="form-control mb-2" type="text" th:name="username" id="inputUsername" minlength="2" required>
 
         <label class="mb-1" for="inputPassword">Password</label>
-        <input class="form-control mb-2" type="password" th:name="password" id="inputPassword">
+        <input class="form-control mb-2" type="password" th:name="password" id="inputPassword" minlength="6" required>
 
         <label class="mb-1" for="inputRepeatPassword">Repeat password</label>
-        <input class="form-control mb-2" type="password" th:name="repeatPassword" id="inputRepeatPassword">
+        <input class="form-control mb-2" type="password" th:name="repeatPassword" id="inputRepeatPassword" minlength="6" required>
 
         <div class="mt-4 d-flex gap-2">
           <button class="btn btn-primary px-4" type="submit">Signup</button>

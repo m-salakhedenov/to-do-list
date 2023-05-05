@@ -19,10 +19,10 @@
       <form th:action="@{/auth/login}" method="POST">
 
         <label class="mb-1" for="inputUsername">Username</label>
-        <input class="form-control mb-2" type="text" th:name="username" id="inputUsername">
+        <input class="form-control mb-2" type="text" th:name="username" id="inputUsername" required minlength="2">
 
         <label class="mb-1" for="inputPassword">Password</label>
-        <input class="form-control mb-2" type="password" th:name="password" id="inputPassword">
+        <input class="form-control mb-2" type="password" th:name="password" id="inputPassword" required minlength="6">
 
         <div class="mt-4 d-flex gap-2">
           <button class="btn btn-primary px-4" type="submit">Login</button>
