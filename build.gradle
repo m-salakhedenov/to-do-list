@@ -26,3 +26,14 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+ext {
+	applicationClass = "com.demo.todo.TodoApplication"
+}
+
+task run(type: Exec) {
+	dependsOn build
+	group = "Execution"
+	description = "Run application"
+	commandLine "java", "-cp", sourceSets.main.runtimeClasspath.getAsPath(), applicationClass
+}
